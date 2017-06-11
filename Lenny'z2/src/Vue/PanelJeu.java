@@ -1,3 +1,4 @@
+package Vue;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -6,6 +7,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+
+import Controleur.ControleurPersonnage;
+import Modele.Chrono;
 
 public class PanelJeu extends JPanel{
 

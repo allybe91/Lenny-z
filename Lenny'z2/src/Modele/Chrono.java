@@ -1,9 +1,12 @@
-
+package Modele;
+import Vue.Main;
+import Vue.Obstacle;
+import Vue.PanelJeu;
 
 public class Chrono implements Runnable {
 
 	private final int PAUSE = 4 ;
-	// hello imbécile
+
 	@Override
 	public void run() {
 		while(!Main.findDePartie){

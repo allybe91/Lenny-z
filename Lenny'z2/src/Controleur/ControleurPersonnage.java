@@ -1,5 +1,10 @@
+package Controleur;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
+import Modele.Etat;
+import Modele.ModelePersonnage;
+import Vue.VuePersonnage;
 
 
 public class ControleurPersonnage implements KeyListener{

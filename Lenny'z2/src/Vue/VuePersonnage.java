@@ -1,9 +1,13 @@
+package Vue;
 import java.awt.Graphics;
 import java.awt.Image;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+
+import Controleur.ControleurPersonnage;
+import Modele.Etat;
 
 
 public class VuePersonnage {
@@ -16,7 +20,6 @@ public class VuePersonnage {
 	private Etat state;
 	private int position_X;
 	private int position_Y;
-	private Sprite image;
 	
 	public VuePersonnage(){
 		this.etat = 0;
