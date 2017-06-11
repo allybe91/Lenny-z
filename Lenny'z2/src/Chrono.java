@@ -8,7 +8,9 @@ public class Chrono implements Runnable {
 	public void run() {
 		while(!Main.findDePartie){
 			Main.panelDeJeu.xFond--;
-			Main.panelDeJeu.xObstacle--;
+			for(Obstacle obstacle : PanelJeu.listeObstacles){
+				obstacle.setX(obstacle.getX() - 1);
+			}
 			Main.panelDeJeu.repaint();
 			try {
 				Thread.sleep(this.PAUSE);
