@@ -10,6 +10,7 @@ public class Chrono implements Runnable {
 			Main.panelDeJeu.xFond--;
 			Main.panelDeJeu.repaint();
 			try {
+				System.out.println("ha");
 				Thread.sleep(this.PAUSE);
 			} catch (InterruptedException e) {}
 		}
