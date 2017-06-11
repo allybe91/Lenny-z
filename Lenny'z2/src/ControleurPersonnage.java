@@ -14,8 +14,19 @@ public class ControleurPersonnage implements KeyListener{
 
 	@Override
 	public void keyPressed(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		this.vue.setState(Etat.SAUTE);
+		switch (arg0.getKeyCode()) {
+		case KeyEvent.VK_SPACE:
+			this.vue.setState(Etat.SAUTE);
+			break;
+		case KeyEvent.VK_DOWN:
+			this.vue.setState(Etat.ROULE);
+			break;
+		default:
+			this.vue.setState(Etat.SAUTE);
+			break;
+		}
+	
+		
 	}
 
 	@Override

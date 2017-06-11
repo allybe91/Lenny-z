@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 
 public class VuePersonnage {
 	
+	private ImageIcon icone;
 	private Image imageDeFond;
 	private int etat;
 	private ControleurPersonnage controleur;
@@ -46,14 +47,16 @@ public class VuePersonnage {
 	}
 	
 	public void sauter(){
-		ImageIcon iconeDeFond = new ImageIcon(getClass().getResource("/Images/Saut.png"));
-		this.imageDeFond = iconeDeFond.getImage();
+		this.icone = new ImageIcon(getClass().getResource("/Images/Saut.png"));
+		this.imageDeFond = this.icone.getImage();
 		g.drawImage(this.imageDeFond,0,100,null);
 	}
 	
 	public void rouler(){
-		this.etat = Etat.ROULE;
-		this.hitBox_Y = 25;
+		this.icone = new ImageIcon(getClass().getResource("/Images/Roule.png"));
+		this.imageDeFond = this.icone.getImage();
+		g.drawImage(this.imageDeFond,0,350,null);
+
 		
 	}
 	
@@ -69,13 +72,13 @@ public class VuePersonnage {
 	
 	public void courir(){
 		if(etat <50){
-			ImageIcon iconeDeFond = new ImageIcon(getClass().getResource("/Images/Cours.png"));
-			this.imageDeFond = iconeDeFond.getImage();
+			this.icone = new ImageIcon(getClass().getResource("/Images/Cours.png"));
+			this.imageDeFond = this.icone.getImage();
 			this.etat ++;
 			
 		}else{
-			ImageIcon iconeDeFond = new ImageIcon(getClass().getResource("/Images/Standing.png"));
-			this.imageDeFond = iconeDeFond.getImage();
+			this.icone = new ImageIcon(getClass().getResource("/Images/Standing.png"));
+			this.imageDeFond = this.icone.getImage();
 			this.etat ++;
 			if(etat == 100){
 				etat = 0;
