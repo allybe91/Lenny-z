@@ -3,7 +3,7 @@
 public class Chrono implements Runnable {
 
 	private final int PAUSE = 5 ;
-	// hello
+	// hello imbécile
 	@Override
 	public void run() {
 		while(!Main.findDePartie){
