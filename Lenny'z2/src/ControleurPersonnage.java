@@ -15,13 +15,12 @@ public class ControleurPersonnage implements KeyListener{
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		System.out.println("ha");
 		this.vue.setState(Etat.SAUTE);
 	}
 
 	@Override
 	public void keyReleased(KeyEvent arg0) {
-		// TODO Auto-generated method stub
+		this.vue.setState(Etat.COURS);
 
 	}
 

@@ -48,7 +48,7 @@ public class VuePersonnage {
 	public void sauter(){
 		ImageIcon iconeDeFond = new ImageIcon(getClass().getResource("/Images/Saut.png"));
 		this.imageDeFond = iconeDeFond.getImage();
-		g.drawImage(this.imageDeFond,100,300,null);
+		g.drawImage(this.imageDeFond,0,100,null);
 	}
 	
 	public void rouler(){
