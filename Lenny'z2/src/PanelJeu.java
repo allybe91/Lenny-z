@@ -38,17 +38,16 @@ public class PanelJeu extends JPanel{
 		g.drawImage(this.imageDeFond,this.xFond+LARGEUR_IMAGE_FOND,0,null);
 		g.drawImage(this.imageDeFond,this.xFond+LARGEUR_IMAGE_FOND *2,0,null);
 		//g.drawImage(this.imageDeFond,this.xFond+LARGEUR_IMAGE_FOND *3,0,null);
-		
-		this.positionnerObstacle(g);
-		this.vuePersonnage.run(g);
+		this.positionnerObstacles(g);
 	}
 	
 	public void paintComponent(Graphics g){
 		this.deplacementFond(g);
+		this.vuePersonnage.run(g);
 	}
 	
 	
-	private void positionnerObstacle(Graphics g){
+	private void positionnerObstacles(Graphics g){
 		this.obstacleTrone = new Obstacle(this.xObstacle, 575, "/Images/obstacleTrone.png");
 		//this.obstacleTrone.setX(this.obstacleTrone.getX() -1);
 		int xOstacleTrone = this.obstacleTrone.getX();
