@@ -42,10 +42,18 @@ public class PanelJeu extends JPanel{
 	}
 	
 	public void paintComponent(Graphics g){
+		Main.findDePartie = isOver();
+		
 		this.deplacementFond(g);
 		this.vuePersonnage.run(g);
+		
 	}
 	
+	private boolean isOver(){
+		if(this.vuePersonnage.getPosition_Y() > this.obstacleTrone.getY() /*&& this.obstacleTrone.getX() < 30*/)
+			return true;
+		return false;
+	}
 	
 	private void positionnerObstacles(Graphics g){
 		this.obstacleTrone = new Obstacle(this.xObstacle, 575, "/Images/obstacleTrone.png");
