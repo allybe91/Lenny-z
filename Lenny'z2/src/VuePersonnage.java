@@ -11,19 +11,44 @@ public class VuePersonnage {
 	private Image imageDeFond;
 	private int etat;
 	private ControleurPersonnage controleur;
+	private Graphics g;
+	private Etat state;
 	
 	public VuePersonnage(){
 		this.etat = 0;
-		this.controleur = new ControleurPersonnage();
-		ImageIcon iconeDeFond = new ImageIcon(getClass().getResource("/Images/Cours.png"));
-		this.imageDeFond = iconeDeFond.getImage();
+		this.state = Etat.COURS;
+		this.controleur = new ControleurPersonnage(this);
+		
+	}
 	
-		//this.addActionListener(controleur);
+	public void setState(Etat e){
+		this.state = e;
+	}
+	
+	public void run(Graphics g){
+		this.g= g;
+		switch (this.state) {
+		case COURS:
+			this.courir();
+			break;
+		case SAUTE:
+			this.sauter();
+			break;
+		case SE_BAISSE:
+			this.seBaisser();
+			break;
+		case ROULE:
+			this.rouler();
+			break;
+		default:
+			break;
+		}
 	}
 	
 	public void sauter(){
 		ImageIcon iconeDeFond = new ImageIcon(getClass().getResource("/Images/Saut.png"));
 		this.imageDeFond = iconeDeFond.getImage();
+		g.drawImage(this.imageDeFond,100,300,null);
 	}
 	
 	public void rouler(){
@@ -42,7 +67,7 @@ public class VuePersonnage {
 		this.hitBox_Y = 25;
 	}
 	
-	public void courir(Graphics g){
+	public void courir(){
 		if(etat <50){
 			ImageIcon iconeDeFond = new ImageIcon(getClass().getResource("/Images/Cours.png"));
 			this.imageDeFond = iconeDeFond.getImage();

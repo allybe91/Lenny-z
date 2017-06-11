@@ -1,5 +1,4 @@
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 
@@ -14,12 +13,22 @@ public class ControleurPersonnage implements KeyListener{
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		if(this.modele.getEtat() == Etat.COURS){
-			this.modele.sauter();
-			this.vue.sauter();
-		}
-		
+	public void keyPressed(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		System.out.println("ha");
+		this.vue.setState(Etat.SAUTE);
+	}
+
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void keyTyped(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+
 	}
 	
 	 

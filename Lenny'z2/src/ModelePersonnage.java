@@ -1,7 +1,7 @@
 
 public class ModelePersonnage {
 
-	public enum Etat {COURS, ROULE, SE_BAISSE, SAUTE};
+	
 	
 	private float position;
 	private float hitBox_X;

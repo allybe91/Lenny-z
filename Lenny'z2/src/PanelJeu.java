@@ -20,10 +20,11 @@ public class PanelJeu extends JPanel{
 		this.imageDeFond = this.iconeDeFond.getImage();
 		
 		this.vuePersonnage = new VuePersonnage();
+		this.addKeyListener(new ControleurPersonnage(vuePersonnage)); // flux indépendant du programme principal
 		this.xFond = 0;
 		this.setFocusable(true); //fenetre reagit avec clavier
 		this.requestFocusInWindow();
-		this.addKeyListener(new Clavier()); // flux indépendant du programme principal
+		
 		Thread chronoEcran = new Thread(new Chrono());
 		chronoEcran.start();
 	}
@@ -37,7 +38,7 @@ public class PanelJeu extends JPanel{
 		g.drawImage(this.imageDeFond,this.xFond+LARGEUR_IMAGE_FOND,0,null);
 		g.drawImage(this.imageDeFond,this.xFond+LARGEUR_IMAGE_FOND *2,0,null);
 		g.drawImage(this.imageDeFond,this.xFond+LARGEUR_IMAGE_FOND *3,0,null);
-		this.vuePersonnage.courir(g);
+		this.vuePersonnage.run(g);
 	}
 	
 	public void paintComponent(Graphics g){
