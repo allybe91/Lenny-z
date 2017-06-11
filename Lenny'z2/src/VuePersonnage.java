@@ -81,7 +81,7 @@ public class VuePersonnage {
 				etat = 0;
 			}
 		}
-		g.drawImage(this.imageDeFond,0,300,null);
+		g.drawImage(this.imageDeFond,0,675,null);
 		
 	}
 }

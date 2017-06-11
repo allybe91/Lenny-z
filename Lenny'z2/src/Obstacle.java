@@ -30,7 +30,7 @@ public class Obstacle {
 	
 	public int getHauteur() {return hauteur;}
 	
-	public Image getImgTuyau() {return this.imageObstacle;}
+	public Image getImg() {return this.imageObstacle;}
 
 	public void setX(int x) {this.x = x;}
 	
