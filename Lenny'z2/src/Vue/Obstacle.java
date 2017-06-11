@@ -10,17 +10,15 @@ public class Obstacle {
 	private int x;
 	private int y;
 	private String strImage;
-	private ImageIcon iconeObstacle;
 	private Image imageObstacle;
 	
 	public Obstacle(int x, int y, String strImage){
-		this.largeur = 200;
-		this.hauteur = 200;
 		this.x = x;
 		this.y = y;
 		this.strImage = strImage;
-		this.iconeObstacle = new ImageIcon(getClass().getResource(this.strImage));
-		this.imageObstacle = this.iconeObstacle.getImage();
+		this.imageObstacle = new ImageIcon(getClass().getResource(this.strImage)).getImage();
+		this.largeur = this.imageObstacle.getWidth(null);
+		this.hauteur = this.imageObstacle.getHeight(null);
 	}
 
 	public int getX() {return x;}

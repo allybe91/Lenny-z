@@ -72,6 +72,7 @@ public class PanelJeu extends JPanel{
 				g.drawImage(obstacle.getImg(), obstacle.getX(), obstacle.getY(), null);
 				System.out.println(obstacle.getLargeur());
 			}
+
 		}
 	}
 
