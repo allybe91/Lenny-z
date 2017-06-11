@@ -12,6 +12,8 @@ public class PanelJeu extends JPanel{
 	private Image imageDeFond;
 	private final int LARGEUR_IMAGE_FOND = 800;
 	public int xFond; // détermine abscisse à gauche de la bande fond qui va se déplacer
+	public int xObstacle;
+	public Obstacle obstacleCourant;
 	private VuePersonnage vuePersonnage;
 	private Graphics g;
 	
@@ -26,6 +28,13 @@ public class PanelJeu extends JPanel{
 		this.addKeyListener(new Clavier()); // flux indépendant du programme principal
 		Thread chronoEcran = new Thread(new Chrono());
 		chronoEcran.start();
+		
+		this.xObstacle = 400;
+		this.obstacleCourant = new Obstacle(this.xObstacle, -150, "/Images/obstacle1.png");
+		
+		this.obstacleCourant.setX(this.obstacleCourant.getX() -1);
+		g.drawImage(this.obstacleCourant.getImgTuyau(),this.obstacleCourant.getX(), this.obstacleCourant.getY(), null);
+		
 	}
 	
 	private void deplacementFond(Graphics g){
