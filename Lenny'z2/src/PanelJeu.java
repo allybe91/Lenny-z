@@ -47,11 +47,12 @@ public class PanelJeu extends JPanel{
 		g.drawImage(this.imageDeFond,this.xFond+LARGEUR_IMAGE_FOND,0,null);
 		g.drawImage(this.imageDeFond,this.xFond+LARGEUR_IMAGE_FOND *2,0,null);
 		g.drawImage(this.imageDeFond,this.xFond+LARGEUR_IMAGE_FOND *3,0,null);
-		this.vuePersonnage.run(g);
+
 	}
 	
 	public void paintComponent(Graphics g){
 		this.deplacementFond(g);
+		this.vuePersonnage.run(g);
 	}
 	
 	

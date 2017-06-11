@@ -18,8 +18,11 @@ public class ControleurPersonnage implements KeyListener{
 		case KeyEvent.VK_SPACE:
 			this.vue.setState(Etat.SAUTE);
 			break;
-		case KeyEvent.VK_DOWN:
+		case KeyEvent.VK_RIGHT:
 			this.vue.setState(Etat.ROULE);
+			break;
+		case KeyEvent.VK_DOWN:
+			this.vue.setState(Etat.SE_BAISSE);
 			break;
 		default:
 			this.vue.setState(Etat.SAUTE);
