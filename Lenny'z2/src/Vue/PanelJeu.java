@@ -54,8 +54,6 @@ public class PanelJeu extends JPanel{
 	
 	private void positionnerObstacles(Graphics g){
 		for (Obstacle obstacle : listeObstacles) {
-			System.out.println(obstacle.getX());
-			System.out.println(obstacle.getY());
 			g.drawImage(obstacle.getImg(), obstacle.getX(), obstacle.getY(), null);
 		}
 	}
