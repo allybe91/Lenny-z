@@ -1,18 +1,19 @@
 
 import java.awt.Graphics;
 import java.awt.Image;
-
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 public class PanelJeu extends JPanel{
 
 	private static final long serialVersionUID = 1L;
-	private Image imageDeFond;
 	private final int LARGEUR_IMAGE_FOND = 800;
+	private Image imageDeFond;
 	public int xFond; // détermine abscisse à gauche de la bande fond qui va se déplacer
-	public int xObstacle;
-	public Obstacle obstacleTrone;
+	public static ArrayList<Obstacle> listeObstacles;
 	private VuePersonnage vuePersonnage;
 	
 	public PanelJeu(){
@@ -24,7 +25,7 @@ public class PanelJeu extends JPanel{
 		this.setFocusable(true); //fenetre reagit avec clavier
 		this.requestFocusInWindow();
 		
-		this.xObstacle = 600;
+		this.creerObstacles();
 		Thread chronoEcran = new Thread(new Chrono());
 		chronoEcran.start();
 		
@@ -48,12 +49,17 @@ public class PanelJeu extends JPanel{
 	
 	
 	private void positionnerObstacles(Graphics g){
-		this.obstacleTrone = new Obstacle(this.xObstacle, 575, "/Images/obstacleTrone.png");
-		//this.obstacleTrone.setX(this.obstacleTrone.getX() -1);
-		int xOstacleTrone = this.obstacleTrone.getX();
-		int yOstacleTrone = this.obstacleTrone.getY();
-		g.drawImage(this.obstacleTrone.getImg(), xOstacleTrone, yOstacleTrone, null);
+		for (Obstacle obstacle : listeObstacles) {
+			System.out.println(obstacle.getX());
+			System.out.println(obstacle.getY());
+			g.drawImage(obstacle.getImg(), obstacle.getX(), obstacle.getY(), null);
+		}
 	}
 	
+	private void creerObstacles(){
+		listeObstacles = new ArrayList<>();
+		Obstacle obstacleTrone = new Obstacle(600, 575, "/Images/obstacleTrone.png");
+		listeObstacles.add(obstacleTrone);
+	}
 	
 }
