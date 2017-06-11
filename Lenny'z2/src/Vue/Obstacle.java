@@ -4,7 +4,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class Obstacle {
-
+	
 	private int largeur;
 	private int hauteur;
 	private int x;
