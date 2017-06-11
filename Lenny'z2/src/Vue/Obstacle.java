@@ -14,8 +14,8 @@ public class Obstacle {
 	private Image imageObstacle;
 	
 	public Obstacle(int x, int y, String strImage){
-		this.largeur = 50;
-		this.hauteur = 300;
+		this.largeur = 200;
+		this.hauteur = 200;
 		this.x = x;
 		this.y = y;
 		this.strImage = strImage;

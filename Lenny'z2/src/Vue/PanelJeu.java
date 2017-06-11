@@ -19,7 +19,7 @@ public class PanelJeu extends JPanel{
 	public int xFond; // détermine abscisse à gauche de la bande fond qui va se déplacer
 	public static ArrayList<Obstacle> listeObstacles;
 	private VuePersonnage vuePersonnage;
-	
+
 	public PanelJeu(){
 		this.imageDeFond = new ImageIcon(getClass().getResource("/Images/fondJeu.png")).getImage();
 
@@ -28,13 +28,13 @@ public class PanelJeu extends JPanel{
 		this.xFond = 0;
 		this.setFocusable(true); //fenetre reagit avec clavier
 		this.requestFocusInWindow();
-		
+
 		this.creerObstacles();
 		Thread chronoEcran = new Thread(new Chrono());
 		chronoEcran.start();
-		
+
 	}
-	
+
 	private void deplacementFond(Graphics g){
 		if(this.xFond == -this.LARGEUR_IMAGE_FOND){
 			this.xFond = 0;
@@ -45,25 +45,49 @@ public class PanelJeu extends JPanel{
 		//g.drawImage(this.imageDeFond,this.xFond+LARGEUR_IMAGE_FOND *3,0,null);
 		this.positionnerObstacles(g);
 	}
-	
+
 	public void paintComponent(Graphics g){
+		Main.findDePartie = isOver();
+
 		this.deplacementFond(g);
 		this.vuePersonnage.run(g);
+
 	}
-	
-	
+
+	private boolean isOver(){
+		if(listeObstacles.isEmpty()){
+			return false;
+		}
+		if(this.vuePersonnage.getPosition_Y() > listeObstacles.get(0).getY() && listeObstacles.get(0).getX() < 30 && listeObstacles.get(0).getX() > 0)
+			return true;
+		return false;
+	}
+
 	private void positionnerObstacles(Graphics g){
-		for (Obstacle obstacle : listeObstacles) {
-			System.out.println(obstacle.getX());
-			System.out.println(obstacle.getY());
-			g.drawImage(obstacle.getImg(), obstacle.getX(), obstacle.getY(), null);
+		if(!listeObstacles.isEmpty()){
+			if(listeObstacles.get(0).getX() < 0-listeObstacles.get(0).getLargeur()){
+				listeObstacles.remove(0);
+			}
+			for (Obstacle obstacle : listeObstacles) {
+				g.drawImage(obstacle.getImg(), obstacle.getX(), obstacle.getY(), null);
+				System.out.println(obstacle.getLargeur());
+			}
 		}
 	}
-	
+
 	private void creerObstacles(){
 		listeObstacles = new ArrayList<>();
 		Obstacle obstacleTrone = new Obstacle(600, 575, "/Images/obstacleTrone.png");
+		Obstacle obstacleTrone1 = new Obstacle(2000, 575, "/Images/obstacleTrone.png");
+		Obstacle obstacleTrone2 = new Obstacle(3000, 575, "/Images/obstacleTrone.png");
+		
+		Obstacle obstacleTrone3 = new Obstacle(4000, 575, "/Images/obstacleTrone.png");
+		
 		listeObstacles.add(obstacleTrone);
+		listeObstacles.add(obstacleTrone1);
+		listeObstacles.add(obstacleTrone2);
+		listeObstacles.add(obstacleTrone3);
+		
 	}
-	
+
 }

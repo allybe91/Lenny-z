@@ -20,15 +20,26 @@ public class VuePersonnage {
 	private Etat state;
 	private int position_X;
 	private int position_Y;
+	private final int NORMAL = 650;
 	
 	public VuePersonnage(){
 		this.etat = 0;
 		this.state = Etat.COURS;
 		this.controleur = new ControleurPersonnage(this);
 		this.position_X = 0;
-		this.position_Y = 300;
+		this.position_Y = NORMAL;
 		
 	}
+	
+	public int getPosition_X() {
+		return position_X;
+	}
+
+	public int getPosition_Y() {
+		return position_Y;
+	}
+
+	
 	
 	public void setState(Etat e){
 		this.state = e;
@@ -55,7 +66,7 @@ public class VuePersonnage {
 	}
 	
 	public void sauter(){
-		this.position_Y = 100;
+		this.position_Y = 400;
 		this.icone = new ImageIcon(getClass().getResource("/Images/Saut.png"));
 		this.imageDeFond = this.icone.getImage();
 		g.drawImage(this.imageDeFond,this.position_X,this.position_Y,null);
@@ -64,7 +75,7 @@ public class VuePersonnage {
 	}
 	
 	public void rouler(){
-		this.position_Y = 350;
+		this.position_Y = NORMAL+50;
 		this.icone = new ImageIcon(getClass().getResource("/Images/Roule.png"));
 		this.imageDeFond = this.icone.getImage();
 		g.drawImage(this.imageDeFond,this.position_X,this.position_Y,null);
@@ -79,14 +90,14 @@ public class VuePersonnage {
 	}
 	
 	public void seBaisser(){
-		this.position_Y = 350;
+		this.position_Y = NORMAL+50;
 		this.icone = new ImageIcon(getClass().getResource("/Images/SeBaisse.png"));
 		this.imageDeFond = this.icone.getImage();
 		g.drawImage(this.imageDeFond,this.position_X,this.position_Y,null);
 	}
 	
 	public void courir(){
-		this.position_Y = 300;
+		this.position_Y = NORMAL;
 		if(etat <50){
 			this.icone = new ImageIcon(getClass().getResource("/Images/Cours.png"));
 			this.imageDeFond = this.icone.getImage();
