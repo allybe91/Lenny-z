@@ -31,10 +31,10 @@ public class PanelJeu extends JPanel{
 		chronoEcran.start();
 		
 		this.xObstacle = 400;
-		this.obstacleCourant = new Obstacle(this.xObstacle, -150, "/Images/obstacle1.png");
+		//this.obstacleCourant = new Obstacle(this.xObstacle, -150, "/Images/obstacle1.png");
 		
-		this.obstacleCourant.setX(this.obstacleCourant.getX() -1);
-		g.drawImage(this.obstacleCourant.getImgTuyau(),this.obstacleCourant.getX(), this.obstacleCourant.getY(), null);
+		//this.obstacleCourant.setX(this.obstacleCourant.getX() -1);
+		//g.drawImage(this.obstacleCourant.getImgTuyau(),this.obstacleCourant.getX(), this.obstacleCourant.getY(), null);
 		
 	}
 	
