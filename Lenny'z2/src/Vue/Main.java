@@ -1,3 +1,4 @@
+package Vue;
 
 
 import javax.swing.JFrame;

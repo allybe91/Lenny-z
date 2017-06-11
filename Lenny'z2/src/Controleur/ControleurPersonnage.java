@@ -1,5 +1,10 @@
+package Controleur;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
+import Modele.Etat;
+import Modele.ModelePersonnage;
+import Vue.VuePersonnage;
 
 
 public class ControleurPersonnage implements KeyListener{
@@ -17,7 +22,6 @@ public class ControleurPersonnage implements KeyListener{
 		switch (arg0.getKeyCode()) {
 		case KeyEvent.VK_SPACE:
 			this.vue.setState(Etat.SAUTE);
-			this.modele.sauter();
 			break;
 		case KeyEvent.VK_RIGHT:
 			this.vue.setState(Etat.ROULE);
@@ -36,7 +40,6 @@ public class ControleurPersonnage implements KeyListener{
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		this.vue.setState(Etat.COURS);
-		this.modele.courir();
 
 	}
 

@@ -1,3 +1,4 @@
+package Vue;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -6,6 +7,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+
+import Controleur.ControleurPersonnage;
+import Modele.Chrono;
 
 public class PanelJeu extends JPanel{
 
@@ -43,18 +47,10 @@ public class PanelJeu extends JPanel{
 	}
 	
 	public void paintComponent(Graphics g){
-		Main.findDePartie = isOver();
-		
 		this.deplacementFond(g);
 		this.vuePersonnage.run(g);
-		
 	}
 	
-	private boolean isOver(){
-		if(this.vuePersonnage.getPosition_Y() > this.obstacleTrone.getY() /*&& this.obstacleTrone.getX() < 30*/)
-			return true;
-		return false;
-	}
 	
 	private void positionnerObstacles(Graphics g){
 		for (Obstacle obstacle : listeObstacles) {
