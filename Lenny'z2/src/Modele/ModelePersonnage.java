@@ -2,8 +2,6 @@ package Modele;
 
 public class ModelePersonnage {
 
-	
-	
 	private float position;
 	private float hitBox_X;
 	private float hitBox_Y;

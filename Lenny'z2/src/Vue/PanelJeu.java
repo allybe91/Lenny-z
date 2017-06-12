@@ -70,7 +70,6 @@ public class PanelJeu extends JPanel{
 			}
 			for (Obstacle obstacle : listeObstacles) {
 				g.drawImage(obstacle.getImg(), obstacle.getX(), obstacle.getY(), null);
-				System.out.println(obstacle.getLargeur());
 			}
 
 		}
